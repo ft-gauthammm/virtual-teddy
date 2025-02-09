@@ -3,88 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Teddy for You! 🧸💕</title>
+    <title>Magnificent Valentine's Surprise 💖</title>
     <style>
-        /* Background with soft gradient */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             height: 100vh;
             background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+            font-family: 'Poppins', sans-serif;
             overflow: hidden;
-            font-family: 'Arial', sans-serif;
             text-align: center;
+            position: relative;
         }
 
-        /* Floating hearts animation */
         .heart {
             position: absolute;
             color: #ff5e99;
-            font-size: 24px;
-            animation: float 3s infinite ease-in-out;
+            font-size: 30px;
+            animation: float 6s infinite ease-in-out;
         }
 
         @keyframes float {
             0% { transform: translateY(0); opacity: 1; }
-            50% { transform: translateY(-50px); opacity: 0.7; }
-            100% { transform: translateY(-100px); opacity: 0; }
+            50% { transform: translateY(-100px); opacity: 0.7; }
+            100% { transform: translateY(-200px); opacity: 0; }
         }
 
-        /* Teddy bear styling */
         .teddy {
-            width: 200px;
-            animation: wave 1.5s infinite ease-in-out;
+            width: 250px;
+            animation: wave 2s infinite ease-in-out;
         }
 
         @keyframes wave {
             0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(5deg); }
+            50% { transform: rotate(8deg); }
         }
 
-        /* Glowing text message */
         .message {
-            font-size: 28px;
+            font-size: 45px;
             font-weight: bold;
-            color: #ffffff;
-            text-shadow: 0 0 10px #ff5e99, 0 0 20px #ff5e99;
+            color: #fff;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 0 0 15px #ff5e99, 0 0 25px #ff5e99;
             margin-top: 20px;
             animation: glow 1.5s infinite alternate;
         }
 
         @keyframes glow {
-            0% { text-shadow: 0 0 10px #ff5e99, 0 0 20px #ff99cc; }
-            100% { text-shadow: 0 0 15px #ff99cc, 0 0 30px #ff99cc; }
+            0% { text-shadow: 0 0 15px #ff5e99, 0 0 30px #ff99cc; }
+            100% { text-shadow: 0 0 20px #ff99cc, 0 0 35px #ff99cc; }
         }
 
-        /* Floating hearts */
-        .hearts-container {
+        .btn {
+            background: #ff5e99;
+            border: none;
+            padding: 15px 40px;
+            font-size: 22px;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, background 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.2);
+            background: #e94e77;
+        }
+
+        .hidden-message {
+            display: none;
+            font-size: 25px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .love-letter {
+            width: 300px;
+            height: 200px;
+            background: #fff5f5;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Great Vibes', cursive;
+            font-size: 24px;
+            display: none;
             position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: zoomIn 0.5s ease-in-out;
+        }
+
+        @keyframes zoomIn {
+            from { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Floating hearts -->
     <div class="hearts-container">
-        <div class="heart" style="top: 20%; left: 10%; animation-duration: 3s;">❤️</div>
-        <div class="heart" style="top: 40%; left: 30%; animation-duration: 4s;">💖</div>
-        <div class="heart" style="top: 60%; left: 20%; animation-duration: 5s;">💕</div>
-        <div class="heart" style="top: 80%; left: 50%; animation-duration: 3.5s;">💞</div>
-        <div class="heart" style="top: 30%; left: 70%; animation-duration: 4.5s;">💗</div>
-        <div class="heart" style="top: 50%; left: 90%; animation-duration: 5.5s;">💓</div>
+        <div class="heart" style="top: 10%; left: 5%; animation-duration: 4s;">❤️</div>
+        <div class="heart" style="top: 40%; left: 30%; animation-duration: 5s;">💖</div>
+        <div class="heart" style="top: 60%; left: 20%; animation-duration: 6s;">💕</div>
+        <div class="heart" style="top: 80%; left: 50%; animation-duration: 4.5s;">💞</div>
+        <div class="heart" style="top: 30%; left: 70%; animation-duration: 5.5s;">💗</div>
+        <div class="heart" style="top: 50%; left: 90%; animation-duration: 6.5s;">💓</div>
     </div>
 
-    <!-- Teddy Bear Image -->
-    <img class="teddy" src="https://i.imgur.com/JyJxDkC.png" alt="Cute Teddy Bear">
+    <img class="teddy" src="https://i.postimg.cc/DyDkLTwr/teddy-bear.png" alt="Cute Teddy Bear">
 
-    <!-- Romantic Message -->
-    <div class="message">happyy teddyy dayy, my babygirlll! 🧸💖 sending you warm hugs! i miss youuuuu! 😘</div>
+    <div class="message">Happy Valentine's Day, My Love! 🧸💖</div>
 
+    <button class="btn" onclick="showLoveMessage()">Click for a Surprise 💝</button>
+    
+    <div id="hidden-message" class="hidden-message">You are my heart, my soul, my everything! 💖💋</div>
+
+    <div id="love-letter" class="love-letter">Dearest Love, you make my world shine brighter every single day. I am forever yours! 💕</div>
+
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        function showLoveMessage() {
+            document.getElementById('hidden-message').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('love-letter').style.display = 'block';
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
